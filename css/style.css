@@ -20,13 +20,12 @@ body{
 
 .navigation-links{
     display:flex;
-    width:400px;
-    justify-content:space-evenly;
     padding:0;
     margin:0;
 }
 
 .navigation-link{
+    margin-left: 40px;
     list-style-type:none;
     color:white;
     font-family:'Lato', sans-serif;
@@ -44,17 +43,21 @@ body{
 }
 
 /* content style */
+section{
+    margin:0 80px;
+    min-height: 500px;
+}
+
 .content{
     position:relative;
-    height:calc(100vh - 200px);
+    height:calc(100vh - 200px) !important;
 }
 
 .self-introduction{
     position:absolute;
-    margin-left:80px;
     display:flex;
     flex-direction:column;
-    width:50%;
+    width:60%;
     margin-top:calc(45vh - 200px);
 }
 
@@ -78,129 +81,121 @@ body{
 }
 
 .content .myself{
-    float:right;
+    position:absolute;
+    right:-80px;
     height:100%;
 }
 
-/* case-studies style */
-.case-studies{
-    display: flex;
-    justify-content: space-evenly;
-    align-items:baseline;
-    padding:0;
-    margin:0;
+.content .arrow{
+    position:absolute;
+    bottom:30px;
+    left:calc(50% - 25px);
+    width:50px;
+    transition-duration:0.1s;
+    transition-timing-function:ease;
 }
 
-.ebuddy, .DESE{
+.content .arrow:hover{
+    bottom:20px;
+}
+
+/* content-case-study style */
+.content-case-study{
+    margin-top:80px;
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 50px; 
+    grid-template-areas:"case1 case1 case1 .  case2 case2 case2"
+                         ".  . case3 case3 case3 .  ." ;
+}
+
+#case1{
+    grid-area: case1;
+}
+
+#case2{
+    grid-area: case2;
+}
+
+#case3{
+    grid-area: case3;
+}
+
+.content-case-study .case-study{
     text-align: center;
-    width:520px;
-    margin-top:40px;
 }
 
-.ebuddy-img,.DESE-img{
-    height: 350px;
+.content-case-study .case-study-img{
+    width: 100%;
+    max-height: 100%;
 }
 
-.ebuddy h3, .DESE h3{
+.content-case-study h3{
     color:white;
     font-family: 'Lato', sans-serif;
     font-size: 28px;
-    margin:10px;
-    padding:0;
+    margin:0;
 }
 
-.ebuddy p, .DESE p{
+.content-case-study p{
     color: white;
     font-family: 'Nunito', sans-serif;
     font-size:16px;
-    margin:10px;
-    padding:0;
     font-weight: 300;
+    margin:0;
+    margin-top:10px;
 }
 
-/* case-studies2 style */
-.case-studies2{
+/* content-special style */
+.content-special{
+    height:100vh;
     display: flex;
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    align-items: baseline;
-    padding:0;
-    margin:0;
+    
 }
 
-.Native-ARC{
-    text-align: center;
-    width:520px;
-    margin-top: 120px;
-}
-
-.Native-img{
-    height:350px;
-}
-
-.Native-ARC h3{
-    color:white;
-    font-family: 'Lato', sans-serif;
-    font-size: 28px;
-    margin:10px;
-    padding:0;
-}
-
-.Native-ARC p{
-    color: white;
-    font-family: 'Nunito', sans-serif;
-    font-size:16px;
-    margin:10px;
-    padding:0;
-    font-weight: 300;
-}
-
-/* my specialities style */
-.my-specialities-title{
-    text-align: center;
-}
-
-.my-specialities-title h1{
+.content-special h1{
     color:white;
     font-family: 'Lato', sans-serif;
     font-size: 40px;
-    padding:0;
-    margin-top: 300px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
-.my-specialties{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-    padding: 0;
-    margin:0;
-    height: 300px;
-}
-
-.user-research, .user-empathy, .qualitative-interview{
-    width:350px;
+.content-special .content-special-info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px; 
     text-align: center;
-    margin-top: 20px;
 }
 
-.search, .profile, .message{
-    width: 60px;
+.content-special .special .img-container{
+    width:100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.user-research h2, .user-empathy h2, .qualitative-interview h2{
+.content-special .special .special-img{
+    height: 100%;
+    width: auto;
+
+}
+
+.content-special .special h2{
     color:white;
     font-family: 'Lato', sans-serif;
     font-size: 28px;
-    margin:10px;
-    padding:0;
 }
 
-.user-research p, .user-empathy p, .qualitative-interview p{
+.content-special .special p{
     color: white;
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
-    padding:0;
-    margin:10px;
     font-weight: 300;
 }
 
@@ -210,11 +205,10 @@ body{
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
-    margin-top:300px;
-    margin-bottom:100px;
+    height:50vh;
 }
 
-.GetInTouch{
+.get-info{
     text-align: center;
 }
 
@@ -222,7 +216,7 @@ body{
     width:350px;
 }
 
-.GetInTouch h1{
+.get-info h1{
     color:white;
     font-family: 'Lato', sans-serif;
     font-size:40px;
